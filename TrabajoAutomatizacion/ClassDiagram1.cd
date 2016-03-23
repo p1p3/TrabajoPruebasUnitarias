@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TrabajoAutomatizacion.Bancos.Banco" Collapsed="true">
+    <Position X="10" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAgAAIAgAAAABAAAAAACAQAAI=</HashCode>
+      <FileName>Bancos\Banco.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrabajoAutomatizacion.Bancos.Cuenta" Collapsed="true">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACQAACCAAAAAAAAAAAAAAAAAAAAACAQ=</HashCode>
+      <FileName>Bancos\Cuenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrabajoAutomatizacion.Clientes.Cliente" Collapsed="true">
+    <Position X="4.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIEAEAAQAAAAgBAAAAAAAAIAAAQAAA=</HashCode>
+      <FileName>Clientes\Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

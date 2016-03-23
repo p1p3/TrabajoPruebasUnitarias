@@ -35,7 +35,7 @@ namespace PruebasUnitarias
             decimal depositoFelipe = 1;
 
             CuentaFelipe.RealizarDeposito(depositoFelipe);
-            var depositoEsperado = montoInicialFelipe + montoInicialFelipe;
+            var depositoEsperado = montoInicialFelipe + depositoFelipe;
             var depositoReal = Bancolombia.TotalDineroDepositado();
 
             Assert.AreEqual(depositoEsperado, depositoReal);
