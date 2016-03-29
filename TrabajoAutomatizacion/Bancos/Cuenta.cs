@@ -16,6 +16,15 @@ namespace TrabajoAutomatizacion.Bancos
             return cuenta;
         }
 
+        public decimal interes
+        {
+            get
+            {
+                return 0.1M;
+            }
+        }
+
+
         private Cuenta(Cliente cliente)
         {
             this.Cliente = cliente;
@@ -41,7 +50,7 @@ namespace TrabajoAutomatizacion.Bancos
             {
                 throw new Exception("Fondos insuficientes");
             }
-            this.dinero -= cantidad;
+            this.dinero -= cantidad + (cantidad * interes);
         }
 
         public Guid NumeroCuenta { get; private set; }

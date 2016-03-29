@@ -49,7 +49,7 @@ namespace PruebasUnitarias
             decimal retiroAlexis = 1;
 
             CuentaAlexis.RealizarRetiro(retiroAlexis);
-            var depositoEsperado = montoInicialAlexis - retiroAlexis;
+            var depositoEsperado = montoInicialAlexis - retiroAlexis - retiroAlexis*CuentaAlexis.interes;
             var depositoReal = Bancolombia.TotalDineroDepositado();
 
             Assert.AreEqual(depositoEsperado, depositoReal);
