@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Banco.Pruebas.Unitarias
 {
     [TestClass]
-    public class BancoTest
+    public class CuentaTest
     {
         private Domain.Bancos.Banco Bancolombia;
         private decimal interesRetiro = 0.1M;
