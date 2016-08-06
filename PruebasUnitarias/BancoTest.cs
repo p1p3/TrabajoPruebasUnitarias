@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Banco.Domain.Bancos.Excepciones;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Banco.Pruebas.Unitarias
 {
@@ -55,7 +56,7 @@ namespace Banco.Pruebas.Unitarias
 
 
         [TestMethod]
-        [ExpectedException(typeof(System.Exception))]
+        [ExpectedException(typeof(FondosInsuficientesException))]
         public void RealizarRetiroFondosInsuficientes()
         {
             decimal montoInicialAlexis = 10;

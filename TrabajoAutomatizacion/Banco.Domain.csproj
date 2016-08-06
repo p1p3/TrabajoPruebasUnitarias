@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Bancos\Banco.cs" />
     <Compile Include="Bancos\Cuenta.cs" />
+    <Compile Include="Bancos\Excepciones\FondosInsuficientesException.cs" />
     <Compile Include="Clientes\Cliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

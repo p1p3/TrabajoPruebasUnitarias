@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Banco.Domain.Bancos.Excepciones;
 using Banco.Domain.Clientes;
 
 namespace Banco.Domain.Bancos
@@ -36,15 +37,21 @@ namespace Banco.Domain.Bancos
 
         public void RealizarRetiro(decimal cantidad)
         {
+            var cantidadTotalConIntereses = cantidad + deducirIntereses(cantidad, interes);
             if (cantidad < 0)
             {
                 throw new Exception("No puedes retirar cantidades negativas");
             }
-            if (cantidad > dinero)
+            if (cantidadTotalConIntereses > dinero )
             {
-                throw new Exception("Fondos insuficientes");
+                throw new FondosInsuficientesException();
             }
-            this.dinero -= cantidad + (cantidad * interes);
+            this.dinero -= cantidadTotalConIntereses;
+        }
+
+        private decimal deducirIntereses(decimal cantidad, decimal interes)
+        {
+            return (cantidad*interes);
         }
 
         public Guid NumeroCuenta { get; private set; }

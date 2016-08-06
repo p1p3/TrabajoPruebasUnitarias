@@ -1,5 +1,6 @@
 ﻿using System;
 using Banco.Domain.Bancos;
+using Banco.Domain.Bancos.Excepciones;
 using Banco.Services;
 using Banco.Services.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -32,10 +33,27 @@ namespace Banco.Pruebas.Integracion
             decimal dineroInicialFelipe = 500;
             decimal totalTransferir = dineroInicialFelipe;
 
-            CuentaFelipe.RealizarDeposito(dineroInicialFelipe);
-            _transferencias.Transferir(CuentaFelipe,CuentaAlexis, totalTransferir);
+            //sumamos el cobro de la transferencia 
+            dineroInicialFelipe = dineroInicialFelipe + totalTransferir * interesRetiro;
 
-            Assert.IsTrue(CuentaFelipe.dinero == dineroInicialFelipe-totalTransferir && CuentaAlexis.dinero == totalTransferir);
+            CuentaFelipe.RealizarDeposito(dineroInicialFelipe);
+            _transferencias.Transferir(CuentaFelipe, CuentaAlexis, totalTransferir);
+
+            var dineroRestanteFelipeEsperado = dineroInicialFelipe - totalTransferir * interesRetiro - totalTransferir;
+
+            Assert.IsTrue(CuentaFelipe.dinero == dineroRestanteFelipeEsperado && CuentaAlexis.dinero == totalTransferir);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FondosInsuficientesException))]
+        public void RealizarRetiroFondosInsuficientes()
+        {
+            //No sumamos el costo de la transfrencia, por lo tanto no alcanzarpa
+            decimal dineroInicialFelipe = 600;
+            decimal totalTransferir = dineroInicialFelipe;
+
+            CuentaFelipe.RealizarDeposito(dineroInicialFelipe);
+            _transferencias.Transferir(CuentaFelipe, CuentaAlexis, totalTransferir);
         }
     }
 }

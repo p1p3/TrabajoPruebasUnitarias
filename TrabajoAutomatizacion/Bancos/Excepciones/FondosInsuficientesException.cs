@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banco.DependencyContainer
+namespace Banco.Domain.Bancos.Excepciones
 {
-    public static class DependencyRegister
+    public class FondosInsuficientesException:Exception
     {
-
     }
 }
