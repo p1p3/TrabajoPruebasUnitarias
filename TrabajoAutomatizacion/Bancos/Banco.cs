@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrabajoAutomatizacion.Clientes;
+using Banco.Domain.Clientes;
 
-namespace TrabajoAutomatizacion.Bancos
+namespace Banco.Domain.Bancos
 {
     public class Banco
     {
@@ -15,17 +15,17 @@ namespace TrabajoAutomatizacion.Bancos
             this.setNIT(NIT);
         }
 
-        public Cuenta AbrirCuentaNuevoCliente(string nombreCliente, string apellidosCliente, string cedula, decimal montoInicial)
+        public Cuenta AbrirCuentaNuevoCliente(string nombreCliente, string apellidosCliente, string cedula, decimal montoInicial, double celular, decimal interesRetiro)
         {
-            var cliente = new Cliente(nombreCliente, apellidosCliente, cedula);
-            var cuenta = this.AbrirCuentaClienteExistente(cliente, montoInicial);
+            var cliente = new Cliente(nombreCliente, apellidosCliente, cedula, celular);
+            var cuenta = this.AbrirCuentaClienteExistente(cliente, montoInicial, interesRetiro);
             return cuenta;
 
         }
 
-        public Cuenta AbrirCuentaClienteExistente(Cliente cliente, decimal montoInicial)
+        public Cuenta AbrirCuentaClienteExistente(Cliente cliente, decimal montoInicial, decimal interesRetiro)
         {
-            var cuenta = Cuenta.CrearCuenta(cliente, montoInicial);
+            var cuenta = Cuenta.CrearCuenta(cliente, montoInicial,interesRetiro);
             cliente.AdicionarCuenta(cuenta);
             this.AdicionarCuenta(cuenta);
             return cuenta;

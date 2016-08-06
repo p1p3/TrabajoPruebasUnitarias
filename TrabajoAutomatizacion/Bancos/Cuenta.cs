@@ -3,31 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrabajoAutomatizacion.Clientes;
+using Banco.Domain.Clientes;
 
-namespace TrabajoAutomatizacion.Bancos
+namespace Banco.Domain.Bancos
 {
     public class Cuenta
     {
-        public static Cuenta CrearCuenta(Cliente cliente, decimal depositoInicial = 0)
+        public static Cuenta CrearCuenta(Cliente cliente, decimal depositoInicial , decimal interesRetiro)
         {
-            var cuenta = new Cuenta(cliente);
+            var cuenta = new Cuenta(cliente,interesRetiro);
             cuenta.RealizarDeposito(depositoInicial);
             return cuenta;
         }
 
-        public decimal interes
-        {
-            get
-            {
-                return 0.1M;
-            }
-        }
+        public decimal interes { get; }
 
-
-        private Cuenta(Cliente cliente)
+        private Cuenta(Cliente cliente, decimal interesretiro)
         {
             this.Cliente = cliente;
+            this.interes = interesretiro;
             this.NumeroCuenta = new Guid();
         }
 
