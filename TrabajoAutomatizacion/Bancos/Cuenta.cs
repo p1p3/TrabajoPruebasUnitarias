@@ -23,7 +23,7 @@ namespace Banco.Domain.Bancos
         {
             this.Cliente = cliente;
             this.interes = interesretiro;
-            this.NumeroCuenta = new Guid();
+            this.NumeroCuenta = Guid.NewGuid();
         }
 
         public void RealizarDeposito(decimal cantidad)

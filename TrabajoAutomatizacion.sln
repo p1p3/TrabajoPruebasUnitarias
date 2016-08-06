@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banco.DependencyContainer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banco.Pruebas.Aceptacion", "Banco.Pruebas.Aceptacion\Banco.Pruebas.Aceptacion.csproj", "{0BEAD530-1806-4E8F-9438-DD23AC67E0CC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{B20FD662-CE5A-425E-86D6-C899C8862989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banco.WindowsForms", "Banco.WindowsForms\Banco.WindowsForms.csproj", "{1BD3C3BD-C960-4D6F-9E99-93CFB2787A7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{0BEAD530-1806-4E8F-9438-DD23AC67E0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BEAD530-1806-4E8F-9438-DD23AC67E0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BEAD530-1806-4E8F-9438-DD23AC67E0CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD3C3BD-C960-4D6F-9E99-93CFB2787A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD3C3BD-C960-4D6F-9E99-93CFB2787A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD3C3BD-C960-4D6F-9E99-93CFB2787A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD3C3BD-C960-4D6F-9E99-93CFB2787A7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +66,6 @@ Global
 		{9FADB10A-7490-43C7-AF1E-3D18244A97F1} = {07C8E215-C31F-4B7D-8C65-DF43D2E5BB8D}
 		{2ED7E056-D179-42B5-8505-D058E5C6EB5B} = {5ED76993-A1DD-4BC6-982F-F5F143C76CEF}
 		{0BEAD530-1806-4E8F-9438-DD23AC67E0CC} = {07C8E215-C31F-4B7D-8C65-DF43D2E5BB8D}
+		{1BD3C3BD-C960-4D6F-9E99-93CFB2787A7F} = {B20FD662-CE5A-425E-86D6-C899C8862989}
 	EndGlobalSection
 EndGlobal
